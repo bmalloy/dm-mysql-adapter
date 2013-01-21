@@ -14,9 +14,7 @@ CURRENT_BRANCH = ENV.fetch('GIT_BRANCH', 'master')
 do_options = {}
 do_options[:git] = "#{DATAMAPPER}/do#{REPO_POSTFIX}" if ENV['DO_GIT'] == 'true'
 
-gem 'dm-do-adapter', DM_VERSION,
-  SOURCE  => "#{DATAMAPPER}/dm-do-adapter#{REPO_POSTFIX}",
-  :branch => CURRENT_BRANCH
+gem 'dm-do-adapter', :git => 'git://github.com/datamapper/dm-do-adapter.git'
 
 group :development do
 
